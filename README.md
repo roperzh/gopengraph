@@ -15,6 +15,7 @@ $ go get github.com/roperzh/gopengraph
 import (
   "fmt"
 
+  "github.com/PuerkitoBio/goquery"
   "github.com/roperzh/gopengraph"
 )
 
