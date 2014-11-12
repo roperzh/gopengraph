@@ -1,0 +1,21 @@
+{
+	"ImportPath": "github.com/roperzh/gopengraph",
+	"GoVersion": "go1.3",
+	"Deps": [
+		{
+			"ImportPath": "code.google.com/p/cascadia",
+			"Comment": "null-31",
+			"Rev": "5d796540e3cb93ea0556c897e6a3c7690f614d35"
+		},
+		{
+			"ImportPath": "github.com/PuerkitoBio/goquery",
+			"Comment": "v0.3.2-58-gffa8a68",
+			"Rev": "ffa8a68c9f2882d21c77b65737c84e2f8690fa1f"
+		},
+		{
+			"ImportPath": "golang.org/x/net/html",
+			"Comment": "null-196",
+			"Rev": "85c27507c4185e5eb889b6c69e4a3542153fb4e1"
+		}
+	]
+}
