@@ -12,6 +12,7 @@ type GopenGraph struct {
 	MandatoryAttrs []string
 }
 
+// Check if all MandatoryAttrs are present
 func (m *GopenGraph) IsValid() bool {
 	for _, attr := range m.MandatoryAttrs {
 		_, isPresent := m.OgAttrs[attr]
@@ -24,6 +25,7 @@ func (m *GopenGraph) IsValid() bool {
 	return true
 }
 
+// Store all Open Graph tags (http://ogp.me/)
 func (m *GopenGraph) PopulateOgTags(doc *goquery.Document) {
 	op := make(map[string]string)
 
@@ -41,11 +43,13 @@ func (m *GopenGraph) PopulateOgTags(doc *goquery.Document) {
 	m.OgAttrs = op
 }
 
+// Store the page Title and Description
 func (m *GopenGraph) PopulateAttrs(doc *goquery.Document) {
 	m.Title = doc.Find("title").Text()
 	m.Description, _ = doc.Find("meta[name='description']").Attr("content")
 }
 
+// Build a new instance of the GopenGraph struct based on an already scrapped site
 func New(doc *goquery.Document) *GopenGraph {
 	mg := new(GopenGraph)
 	mg.MandatoryAttrs = []string{"og:title", "og:type", "og:image", "og:url"}
@@ -55,6 +59,7 @@ func New(doc *goquery.Document) *GopenGraph {
 	return mg
 }
 
+// Build a new instance of the GopenGraph Struct with an url string
 func NewFromUrl(url string) (*GopenGraph, error) {
 	doc, err := goquery.NewDocument(url)
 
