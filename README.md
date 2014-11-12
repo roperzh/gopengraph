@@ -1,4 +1,4 @@
-# Gopengraph
+# Gopengraph [![CI Status][CI img]][CI Status]
 
 GopenGraph is a very simple Go library for parsing [Open Graph](http://ogp.me/) protocol and Metadata information from web sites.
 
@@ -48,3 +48,6 @@ fmt.Printf("og:site_name: %s, og:url: %s", pageFromDocument.OgAttrs["og:site_nam
 ## License
 
 MIT License
+
+[CI Status]: https://travis-ci.org/roperzh/gopengraph
+[CI img]: https://api.travis-ci.org/roperzh/gopengraph.svg
