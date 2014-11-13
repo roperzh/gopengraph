@@ -2,6 +2,7 @@ package gopengraph
 
 import (
 	"fmt"
+	"net/url"
 	"os"
 	"testing"
 
@@ -31,7 +32,11 @@ func loadDoc(page string) *goquery.Document {
 	if node, e = html.Parse(f); e != nil {
 		panic(e.Error())
 	}
-	return goquery.NewDocumentFromNode(node)
+
+	doc := goquery.NewDocumentFromNode(node)
+	doc.Url, _ = url.Parse("http://example.com")
+
+	return doc
 }
 
 func TestPageTitle(t *testing.T) {

@@ -10,6 +10,7 @@ func New(doc *goquery.Document) *GopenGraph {
 	mg.MandatoryAttrs = []string{"og:title", "og:type", "og:image", "og:url"}
 	mg.PopulateOgTags(doc)
 	mg.PopulateAttrs(doc)
+	mg.Url = doc.Url.String()
 
 	return mg
 }

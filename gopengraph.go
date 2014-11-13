@@ -9,6 +9,7 @@ type GopenGraph struct {
 	OgAttrs        map[string]string
 	Title          string
 	Description    string
+	Url            string
 	MandatoryAttrs []string
 }
 
